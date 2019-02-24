@@ -1,0 +1,22 @@
+<div class="col-md-6">
+  <h2 class="text-center">{{pageTitle}}</h2>
+  <form>
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input type="text" placeholder="Name" name="name" [(ngModel)]="employeeData.name" class="form-control" id="name">
+    </div>
+
+    <div class="form-group">
+      <label for="designation">Designation:</label>
+      <input type="text" placeholder="Designation" [(ngModel)]="employeeData.designation" name="designation" class="form-control"
+        id="designation">
+    </div>
+
+    <div class="form-group">
+      <label for="salary">Salary:</label>
+      <input type="text" placeholder="Salary" [(ngModel)]="employeeData.salary" name="salary" class="form-control" id="salary">
+    </div>
+    <button (click)="submit()" class="btn btn-success margin-right-20">Save</button>
+    <button (click)="cancel()" class="btn btn-secondary">Cancel</button>
+  </form>
+</div>

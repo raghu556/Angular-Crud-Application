@@ -1,0 +1,27 @@
+<div class="container margin-top-20">
+<form>
+    <div class="form-group">
+    <label for="name">Search:</label>
+    <input type="text" placeholder="Search" name="search" [(ngModel)]="searchtxt" class="form-control">
+  </div>
+</form>
+<table class="table table-bordered">
+  <tr>
+    <td>Name</td>
+    <td>Designation</td>
+    <td>Salary</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tbody *ngIf="employeesData.length != 0" >
+  <tr *ngFor="let employee of employeesData | search:'name': searchtxt; let i = index">
+    <td>{{employee?.name}}</td>
+    <td>{{employee?.designation}}</td>
+    <td>{{employee?.salary}}</td>
+    <td><button (click)="editEmployee(i)">Edit</button></td>
+    <td><button (click)="deleteEmployee(i)">Delete</button></td>
+  </tr>
+</tbody>
+</table>
+<button (click)="addEmployee()" class="btn btn-primary">Add Employee</button>
+</div>
